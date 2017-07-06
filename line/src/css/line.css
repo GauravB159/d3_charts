@@ -1,0 +1,11 @@
+.canvas{
+	stroke:none;
+	fill:none;
+}
+.chart g {
+  pointer-events: all;
+}
+.curdate{
+	fill:black;
+	stroke:black;
+}

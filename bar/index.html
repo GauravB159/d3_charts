@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<script src="./lib/d3v4.min.js"></script>
+		<script
+		  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+		  crossorigin="anonymous"></script>
+		<link rel = "stylesheet" type = "text/css" href = "./src/css/bar.css"></link>
+	</head>
+	<body>
+		<svg class = "chart">
+		</svg>
+			<form id = "add">
+				Name: <input name = "name" type = "text">
+				Value: <input name = "value" type = "number">
+				<button type = "button" id = "datadd">Add data</button>
+			</form>
+	</body>
+	<script src = "./src/js/bar.js"></script>
+	<script type="text/javascript">
+		var config = {
+			angle: -55,
+			marginLeft:50,
+			marginRight:50,
+			marginTop:50,
+			marginBottom:150,
+			color: "rgba(0,0,250,0.8)",
+			ratio:2,
+		};
+		var bar = new BarGraph(config);
+		bar.createBarGraph();
+		document.getElementById('datadd').onclick = function(){ bar.updateBarGraph() };
+
+	</script>
+</html>

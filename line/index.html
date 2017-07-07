@@ -1,37 +1,27 @@
 <html>
 	<head>
 		<script src="./lib/d3v4.min.js"></script>
-		<script
-		  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
-		  crossorigin="anonymous"></script>
 		<link rel = "stylesheet" type = "text/css" href = "./src/css/line.css"></link>
 	</head>
 	<body>
 		<svg class = "chart">
 		</svg>
-			<form id = "add">
-				Name: <input name = "name" type = "text">
-				Value: <input name = "value" type = "number">
-				<button type = "button" id = "datadd">Add data</button>
-			</form>
 	</body>
 	<script src = "./src/js/line.js"></script>
 	<script type="text/javascript">
 		var config = {
-			angle: -55,
 			marginLeft:30,
 			marginRight:50,
 			marginTop:50,
-			marginBottom:150,
-			color: "rgb(250,0,0)",
-			width:800,
+			marginBottom:70,
+			color: "red",
+			width:1000,
 			ratio:0.5,
-			stroke_width:3.5
+			stroke_width:1.5,
+			show_datap: false
 		};
 		var line = new LineGraph(config);
 		line.createLineGraph();
-		document.getElementById('datadd').onclick = function(){ line.updateLineGraph() };
 
 	</script>
 </html>

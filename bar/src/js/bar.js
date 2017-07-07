@@ -23,10 +23,9 @@ BarGraph.prototype.createBarGraph = function(){
 		marginBottom = this.marginBottom,
 		marginRight = this.marginRight,
 		maintainAspect = this.maintainAspect,
-		height = this.height,
-		width = this.width,
 		rat;
-
+	height = this.height;
+	width = this.width;
 	var margin = {top: marginTop, right: marginRight, bottom: marginBottom, left: marginLeft};
 	if(height === undefined && width === undefined ){
 		rat = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight;
@@ -129,10 +128,13 @@ BarGraph.prototype.updateBarGraph = function(){
 
 	bars.select('rect').attr('x',function(d){ return x(d.name) })
 		.attr('y',function(d){ return  y(d.value) })
-		.attr("height", function(d) { return height - y(d.value); })
+		.attr("height", function(d) { return height - y(d.value) })
 		.attr('width',x.bandwidth())
 		.style('fill',function(d){ return color});
 
+	var t = d3.transition()
+	    .duration(750)
+	    .ease(d3.easeLinear);
 
 	bars.enter()
 		.append('g')
@@ -141,7 +143,7 @@ BarGraph.prototype.updateBarGraph = function(){
 		.merge(bars)
 		.attr('x',function(d){ return x(d.name) })
 		.attr('y',function(d){ return  y(d.value) })
-		.attr("height", function(d) { return height - y(d.value); })
+		.attr("height", function(d) { console.log(height);return height - y(d.value); })
 		.attr('width',x.bandwidth())
 		.style('fill',function(d){ return color });
 

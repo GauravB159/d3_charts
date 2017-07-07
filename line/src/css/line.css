@@ -8,4 +8,29 @@
 .curdate{
 	fill:black;
 	stroke:black;
+	font-size: 10px;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: red;
+  stroke: red;
+}
+
+.focus text{
+	font-size: 10px;
+	
+}
+.overlay{
+	fill:none;
 }
